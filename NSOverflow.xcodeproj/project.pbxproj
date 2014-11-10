@@ -14,6 +14,7 @@
 		48D6E6211A11561400D2EC68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48D6E6201A11561400D2EC68 /* Images.xcassets */; };
 		48D6E6241A11561400D2EC68 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D6E6221A11561400D2EC68 /* LaunchScreen.xib */; };
 		48D6E6301A11561400D2EC68 /* NSOverflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E62F1A11561400D2EC68 /* NSOverflowTests.m */; };
+		48D6E63C1A1171A600D2EC68 /* SplitContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E63B1A1171A600D2EC68 /* SplitContainerVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,8 @@
 		48D6E6291A11561400D2EC68 /* NSOverflowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSOverflowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D6E62E1A11561400D2EC68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48D6E62F1A11561400D2EC68 /* NSOverflowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOverflowTests.m; sourceTree = "<group>"; };
+		48D6E63A1A1171A600D2EC68 /* SplitContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitContainerVC.h; sourceTree = "<group>"; };
+		48D6E63B1A1171A600D2EC68 /* SplitContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitContainerVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 		48D6E60F1A11561400D2EC68 /* NSOverflow */ = {
 			isa = PBXGroup;
 			children = (
+				48D6E6391A1157C400D2EC68 /* ViewControllers */,
 				48D6E6141A11561400D2EC68 /* AppDelegate.h */,
 				48D6E6151A11561400D2EC68 /* AppDelegate.m */,
 				48D6E61D1A11561400D2EC68 /* Main.storyboard */,
@@ -115,6 +119,15 @@
 				48D6E62E1A11561400D2EC68 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48D6E6391A1157C400D2EC68 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				48D6E63A1A1171A600D2EC68 /* SplitContainerVC.h */,
+				48D6E63B1A1171A600D2EC68 /* SplitContainerVC.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48D6E6161A11561400D2EC68 /* AppDelegate.m in Sources */,
+				48D6E63C1A1171A600D2EC68 /* SplitContainerVC.m in Sources */,
 				48D6E6191A11561400D2EC68 /* NSOverflow.xcdatamodeld in Sources */,
 				48D6E6131A11561400D2EC68 /* main.m in Sources */,
 			);
