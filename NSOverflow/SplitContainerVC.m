@@ -7,6 +7,7 @@
 //
 
 #import "SplitContainerVC.h"
+#import "CCStackExchangeService.h"
 
 @interface SplitContainerVC ()
 
@@ -19,6 +20,13 @@
     // Do any additional setup after loading the view.
     UISplitViewController *splitVC = self.childViewControllers[0];
     [splitVC setDelegate:self];
+    
+    NSLog(@"HELLO");
+    
+    CCStackExchangeService *service = [[CCStackExchangeService alloc] init];
+    [service fetchObjectsAtPath:@"users" withParams:nil completion:^(NSArray *data, NSString *errorMessage) {
+        NSLog(@"Error: %@", errorMessage);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
