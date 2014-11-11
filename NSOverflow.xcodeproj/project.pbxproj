@@ -15,7 +15,7 @@
 		48D6E6241A11561400D2EC68 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D6E6221A11561400D2EC68 /* LaunchScreen.xib */; };
 		48D6E6301A11561400D2EC68 /* NSOverflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E62F1A11561400D2EC68 /* NSOverflowTests.m */; };
 		48D6E63C1A1171A600D2EC68 /* SplitContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E63B1A1171A600D2EC68 /* SplitContainerVC.m */; };
-		48D6E6401A11764800D2EC68 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E63F1A11764800D2EC68 /* User.m */; };
+		48D6E6401A11764800D2EC68 /* CCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E63F1A11764800D2EC68 /* CCUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +43,8 @@
 		48D6E62F1A11561400D2EC68 /* NSOverflowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOverflowTests.m; sourceTree = "<group>"; };
 		48D6E63A1A1171A600D2EC68 /* SplitContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitContainerVC.h; sourceTree = "<group>"; };
 		48D6E63B1A1171A600D2EC68 /* SplitContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitContainerVC.m; sourceTree = "<group>"; };
-		48D6E63E1A11764800D2EC68 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		48D6E63F1A11764800D2EC68 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		48D6E63E1A11764800D2EC68 /* CCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUser.h; sourceTree = "<group>"; };
+		48D6E63F1A11764800D2EC68 /* CCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +137,8 @@
 		48D6E63D1A11753A00D2EC68 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				48D6E63E1A11764800D2EC68 /* User.h */,
-				48D6E63F1A11764800D2EC68 /* User.m */,
+				48D6E63E1A11764800D2EC68 /* CCUser.h */,
+				48D6E63F1A11764800D2EC68 /* CCUser.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -243,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48D6E6401A11764800D2EC68 /* User.m in Sources */,
+				48D6E6401A11764800D2EC68 /* CCUser.m in Sources */,
 				48D6E6161A11561400D2EC68 /* AppDelegate.m in Sources */,
 				48D6E63C1A1171A600D2EC68 /* SplitContainerVC.m in Sources */,
 				48D6E6191A11561400D2EC68 /* NSOverflow.xcdatamodeld in Sources */,

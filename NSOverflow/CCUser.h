@@ -1,5 +1,5 @@
 //
-//  User.h
+//  CCUser.h
 //  NSOverflow
 //
 //  Created by Casey R White on 11/10/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface CCUser : NSObject
 
 @property (nonatomic, strong) NSNumber *userID;
 @property (nonatomic, strong) NSString *displayName;

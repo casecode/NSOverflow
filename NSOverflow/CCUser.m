@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 casecode. All rights reserved.
 //
 
-#import "User.h"
+#import "CCUser.h"
 
-@implementation User
+@implementation CCUser
 
 - (instancetype)init:(NSDictionary *)data {
     if (self = [super init]) {
