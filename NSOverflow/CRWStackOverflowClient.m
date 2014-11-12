@@ -7,77 +7,105 @@
 //
 
 #import "CRWStackOverflowClient.h"
+#import "CRWConstants.h"
+#import "CRWQuestion.h"
+
+static NSString * const API_BASE_URL = @"https://api.stackexchange.com/2.2";
+static NSString * const API_KEY = @"eecC8QAViP40PkTd16RXrQ((";
 
 @interface CRWStackOverflowClient ()
 
-@property (nonatomic, strong) NSString * const apiBaseURL;
-@property (nonatomic, strong) NSString * const apiKey;
+- (void)fetchObjectsAtURL:(NSString *)url completion:(void (^)(NSData *data, NSError *error))completion;
 
 @end
 
 
 @implementation CRWStackOverflowClient
 
-- (instancetype)init {
-    if (self = [super init]) {
-        self.apiBaseURL = @"https://api.stackexchange.com/2.2";
-        self.apiKey = @"eecC8QAViP40PkTd16RXrQ((";
-    }
-
-    return self;
++ (id)sharedClient {
+    static CRWStackOverflowClient *_sharedClient;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedClient = [[CRWStackOverflowClient alloc] init];
+    });
+    
+    return _sharedClient;
 }
 
-- (void)fetchObjectsAtPath:(NSString *)path withParams:(NSDictionary *)params completion:(void (^)(NSData *, NSString *))callback {
+- (void)fetchQuestionsWithTag:(NSString *)tag completion:(void (^)(NSArray *, NSError *))completion {
     
-    NSMutableString *builtURL = [[NSMutableString alloc] initWithString:self.apiBaseURL];
+    NSString *resourcePath = @"/questions";
+    NSString *params = [NSString stringWithFormat:@"?order=desc&tagged=%@&site=stackoverflow&key=%@", tag, API_KEY];
+    NSString *url = [NSString stringWithFormat:@"%@%@%@", API_BASE_URL, resourcePath, params];
     
-    if (path != nil)
-    {
-        [builtURL appendString:path];
-    }
-    
-    NSLog(@"%@", builtURL);
-    
-    NSURL *url = [NSURL URLWithString:builtURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    id dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-    {
+    [self fetchObjectsAtURL:url completion:^(NSData *data, NSError *error) {
+        NSError *fetchError = nil;
+        NSMutableArray *questions = nil;
         
-        NSUInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
-        
-        if (error != nil) {
-            NSLog(@"%@", [error localizedDescription]);
+        if (error) {
+            fetchError = error;
         }
         else {
-            switch (statusCode)
-            {
-                case 200:
-                case 201:
-                case 204:
-                {
-//                    errorMessage = nil;
-//                    NSError *parseError;
-//                    NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&parseError];
-//                    if (parseError == nil) {
-//                        
-//                    }
-                    callback(data, nil);
+            id objs = [NSJSONSerialization JSONObjectWithData:data options:0 error:&fetchError];
+            
+            if (!fetchError) {
+                questions = [NSMutableArray array];
+                
+                if ([objs isKindOfClass:[NSDictionary class]]) {
+                    NSArray *items = [(NSDictionary *)objs objectForKey:@"items"];
+                    
+                    [items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                        if ([obj isKindOfClass:[NSDictionary class]]) {
+                            CRWQuestion *question = [CRWQuestion questionFromDictionary:(NSDictionary *)obj];
+                            [questions addObject:question];
+                        }
+                    }];
                 }
-                    break;
-                default:
-                {
-                    callback(nil, @"Error with request");
-                }
-                break;
             }
         }
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(questions, fetchError);
+        });
+    }];
+}
+
+- (void)fetchObjectsAtURL:(NSString *)url completion:(void (^)(NSData *, NSError *))completion {
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    {
+        NSError *fetchError = nil;
+        NSData *fetchData = nil;
+        
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+            fetchError = error;
+        }
+        else {
+            if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+                
+                if (httpResponse.statusCode >= 400) {
+                    NSDictionary *userInfo = @{
+                        @"statusCode": @(httpResponse.statusCode),
+                        @"error": [error localizedDescription]
+                    };
+                    
+                    fetchError = [NSError errorWithDomain:NSOVERFLOW_DOMAIN code:0 userInfo:userInfo];
+                }
+                else {
+                    fetchData = data;
+                }
+            }
+        }
+        
+        completion(fetchData, fetchError);
+        
     }];
     
-    [dataTask resume];
-    
-    callback(nil, @"Was there an error?");
+    [task resume];
 }
 
 @end

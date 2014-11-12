@@ -21,11 +21,14 @@
     UISplitViewController *splitVC = self.childViewControllers[0];
     [splitVC setDelegate:self];
     
-    NSLog(@"HELLO");
-    
-    CRWStackOverflowClient *service = [[CRWStackOverflowClient alloc] init];
-    [service fetchObjectsAtPath:@"users" withParams:nil completion:^(NSData *data, NSString *errorMessage) {
-        NSLog(@"Error: %@", errorMessage);
+    CRWStackOverflowClient *service = [CRWStackOverflowClient sharedClient];
+    [service fetchQuestionsWithTag:@"ios" completion:^(NSArray *questions, NSError *error) {
+        if (error) {
+            NSLog(@"ERROR: %@", [error localizedDescription]);
+        }
+        else {
+            NSLog(@"Question Count: %lu", questions.count);
+        }
     }];
 }
 

@@ -18,17 +18,13 @@
 @implementation CRWQuestion
 
 + (CRWQuestion *)questionFromDictionary:(NSDictionary *)dictionary {
-    if ([dictionary isKindOfClass:[NSDictionary class]]) {
         
-        CRWQuestion *question = [[self alloc] init];
-        
-        question.title = [dictionary objectForKey:@"title"];
-        question.link = [dictionary objectForKey:@"link"];
-        
-        return question;
-    }
+    CRWQuestion *question = [[self alloc] init];
     
-    return nil;
+    question.title = [dictionary objectForKey:@"title"];
+    question.link = [dictionary objectForKey:@"link"];
+    
+    return question;
 }
 
 @end

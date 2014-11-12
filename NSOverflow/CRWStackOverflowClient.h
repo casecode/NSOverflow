@@ -10,6 +10,8 @@
 
 @interface CRWStackOverflowClient : NSObject
 
-- (void)fetchObjectsAtPath:(NSString *)path withParams:(NSDictionary *)params completion:(void (^)(NSData *data, NSString *errorMessage))callback;
++ (id)sharedClient;
+
+- (void)fetchQuestionsWithTag:(NSString *)tag completion:(void (^)(NSArray *questions, NSError *error))completion;
 
 @end
