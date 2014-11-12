@@ -7,7 +7,7 @@
 //
 
 #import "SplitContainerVC.h"
-#import "CCStackExchangeService.h"
+#import "CRWStackOverflowClient.h"
 
 @interface SplitContainerVC ()
 
@@ -23,8 +23,8 @@
     
     NSLog(@"HELLO");
     
-    CCStackExchangeService *service = [[CCStackExchangeService alloc] init];
-    [service fetchObjectsAtPath:@"users" withParams:nil completion:^(NSArray *data, NSString *errorMessage) {
+    CRWStackOverflowClient *service = [[CRWStackOverflowClient alloc] init];
+    [service fetchObjectsAtPath:@"users" withParams:nil completion:^(NSData *data, NSString *errorMessage) {
         NSLog(@"Error: %@", errorMessage);
     }];
 }

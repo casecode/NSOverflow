@@ -15,8 +15,8 @@
 		48D6E6241A11561400D2EC68 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D6E6221A11561400D2EC68 /* LaunchScreen.xib */; };
 		48D6E6301A11561400D2EC68 /* NSOverflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E62F1A11561400D2EC68 /* NSOverflowTests.m */; };
 		48D6E63C1A1171A600D2EC68 /* SplitContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E63B1A1171A600D2EC68 /* SplitContainerVC.m */; };
-		48D6E6401A11764800D2EC68 /* CCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E63F1A11764800D2EC68 /* CCUser.m */; };
-		48D6E6441A11924E00D2EC68 /* CCStackExchangeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E6431A11924E00D2EC68 /* CCStackExchangeService.m */; };
+		48D6E6401A11764800D2EC68 /* CRWUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E63F1A11764800D2EC68 /* CRWUser.m */; };
+		48D6E6441A11924E00D2EC68 /* CRWStackOverflowClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E6431A11924E00D2EC68 /* CRWStackOverflowClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +44,10 @@
 		48D6E62F1A11561400D2EC68 /* NSOverflowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOverflowTests.m; sourceTree = "<group>"; };
 		48D6E63A1A1171A600D2EC68 /* SplitContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitContainerVC.h; sourceTree = "<group>"; };
 		48D6E63B1A1171A600D2EC68 /* SplitContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitContainerVC.m; sourceTree = "<group>"; };
-		48D6E63E1A11764800D2EC68 /* CCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUser.h; sourceTree = "<group>"; };
-		48D6E63F1A11764800D2EC68 /* CCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUser.m; sourceTree = "<group>"; };
-		48D6E6421A11924E00D2EC68 /* CCStackExchangeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStackExchangeService.h; sourceTree = "<group>"; };
-		48D6E6431A11924E00D2EC68 /* CCStackExchangeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStackExchangeService.m; sourceTree = "<group>"; };
+		48D6E63E1A11764800D2EC68 /* CRWUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWUser.h; sourceTree = "<group>"; };
+		48D6E63F1A11764800D2EC68 /* CRWUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRWUser.m; sourceTree = "<group>"; };
+		48D6E6421A11924E00D2EC68 /* CRWStackOverflowClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWStackOverflowClient.h; sourceTree = "<group>"; };
+		48D6E6431A11924E00D2EC68 /* CRWStackOverflowClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRWStackOverflowClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +141,8 @@
 		48D6E63D1A11753A00D2EC68 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				48D6E63E1A11764800D2EC68 /* CCUser.h */,
-				48D6E63F1A11764800D2EC68 /* CCUser.m */,
+				48D6E63E1A11764800D2EC68 /* CRWUser.h */,
+				48D6E63F1A11764800D2EC68 /* CRWUser.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -150,8 +150,8 @@
 		48D6E6411A11920900D2EC68 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				48D6E6421A11924E00D2EC68 /* CCStackExchangeService.h */,
-				48D6E6431A11924E00D2EC68 /* CCStackExchangeService.m */,
+				48D6E6421A11924E00D2EC68 /* CRWStackOverflowClient.h */,
+				48D6E6431A11924E00D2EC68 /* CRWStackOverflowClient.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -256,8 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48D6E6401A11764800D2EC68 /* CCUser.m in Sources */,
-				48D6E6441A11924E00D2EC68 /* CCStackExchangeService.m in Sources */,
+				48D6E6401A11764800D2EC68 /* CRWUser.m in Sources */,
+				48D6E6441A11924E00D2EC68 /* CRWStackOverflowClient.m in Sources */,
 				48D6E6161A11561400D2EC68 /* AppDelegate.m in Sources */,
 				48D6E63C1A1171A600D2EC68 /* SplitContainerVC.m in Sources */,
 				48D6E6191A11561400D2EC68 /* NSOverflow.xcdatamodeld in Sources */,
@@ -454,6 +454,7 @@
 				48D6E6351A11561400D2EC68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48D6E6361A11561400D2EC68 /* Build configuration list for PBXNativeTarget "NSOverflowTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +463,7 @@
 				48D6E6381A11561400D2EC68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
