@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48CF2D791A12E08800FAC0B7 /* CRWQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */; };
 		48D6E6131A11561400D2EC68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E6121A11561400D2EC68 /* main.m */; };
 		48D6E6161A11561400D2EC68 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E6151A11561400D2EC68 /* AppDelegate.m */; };
 		48D6E6191A11561400D2EC68 /* NSOverflow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E6171A11561400D2EC68 /* NSOverflow.xcdatamodeld */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48CF2D771A12E08800FAC0B7 /* CRWQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWQuestion.h; sourceTree = "<group>"; };
+		48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRWQuestion.m; sourceTree = "<group>"; };
 		48D6E60D1A11561400D2EC68 /* NSOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D6E6111A11561400D2EC68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48D6E6121A11561400D2EC68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 			children = (
 				48D6E63E1A11764800D2EC68 /* CRWUser.h */,
 				48D6E63F1A11764800D2EC68 /* CRWUser.m */,
+				48CF2D771A12E08800FAC0B7 /* CRWQuestion.h */,
+				48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48D6E6401A11764800D2EC68 /* CRWUser.m in Sources */,
+				48CF2D791A12E08800FAC0B7 /* CRWQuestion.m in Sources */,
 				48D6E6441A11924E00D2EC68 /* CRWStackOverflowClient.m in Sources */,
 				48D6E6161A11561400D2EC68 /* AppDelegate.m in Sources */,
 				48D6E63C1A1171A600D2EC68 /* SplitContainerVC.m in Sources */,
