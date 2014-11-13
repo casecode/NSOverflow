@@ -8,4 +8,4 @@
 
 #import "CRWConstants.h"
 
-NSString * const NSOVERFLOW_DOMAIN = @"com.casecode.NSOverflow";
+NSString * const kNSOverflowDomain = @"com.casecode.NSOverflow";

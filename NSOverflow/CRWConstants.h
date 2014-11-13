@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-FOUNDATION_EXPORT NSString * const NSOVERFLOW_DOMAIN;
+FOUNDATION_EXPORT NSString * const kNSOverflowDomain;
