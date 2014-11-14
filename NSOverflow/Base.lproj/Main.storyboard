@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ee-XU-Ds2">
-                                <rect key="frame" x="220" y="285" width="161" height="30"/>
+                                <rect key="frame" x="220" y="212" width="161" height="30"/>
                                 <state key="normal" title="Log Into StackOverflow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,15 +26,35 @@
                                     <action selector="loginPressed:" destination="IMj-pV-gWe" eventType="touchUpInside" id="QJb-Oy-him"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is recommended that you log into StackOverflow in order to increase your rate limit." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-1I-1t6">
+                                <rect key="frame" x="16" y="121" width="568" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are authenticated with StackOverflow." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ay2-gS-jr2">
+                                <rect key="frame" x="16" y="50" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="6ee-XU-Ds2" secondAttribute="centerX" id="LlA-ec-abj"/>
-                            <constraint firstAttribute="centerY" secondItem="6ee-XU-Ds2" secondAttribute="centerY" id="SeO-Jn-rpW"/>
+                            <constraint firstItem="ay2-gS-jr2" firstAttribute="leading" secondItem="isB-UC-5KY" secondAttribute="leadingMargin" id="3A4-WS-dIU"/>
+                            <constraint firstItem="6ee-XU-Ds2" firstAttribute="top" secondItem="I8Z-1I-1t6" secondAttribute="bottom" constant="50" id="3nR-PP-Dww"/>
+                            <constraint firstAttribute="centerX" secondItem="6ee-XU-Ds2" secondAttribute="centerX" id="9Pq-le-jIT"/>
+                            <constraint firstItem="ay2-gS-jr2" firstAttribute="top" secondItem="YhN-QO-K7c" secondAttribute="bottom" constant="50" id="JFW-LB-H1o"/>
+                            <constraint firstItem="I8Z-1I-1t6" firstAttribute="trailing" secondItem="isB-UC-5KY" secondAttribute="trailingMargin" id="JGy-2K-JUa"/>
+                            <constraint firstItem="I8Z-1I-1t6" firstAttribute="leading" secondItem="isB-UC-5KY" secondAttribute="leadingMargin" id="YMs-VP-gHA"/>
+                            <constraint firstItem="I8Z-1I-1t6" firstAttribute="top" secondItem="ay2-gS-jr2" secondAttribute="bottom" constant="50" id="aaE-j7-BKL"/>
+                            <constraint firstItem="ay2-gS-jr2" firstAttribute="trailing" secondItem="isB-UC-5KY" secondAttribute="trailingMargin" id="xT6-7V-qlV"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authenticatedMessageLabel" destination="ay2-gS-jr2" id="lkD-IE-Gxx"/>
                         <outlet property="loginButton" destination="6ee-XU-Ds2" id="rc2-Oz-XnA"/>
+                        <outlet property="loginMessageLabel" destination="I8Z-1I-1t6" id="5cx-Ek-kW5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXe-54-pXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,17 +173,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pad-wo-Olw">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pad-wo-Olw" firstAttribute="leading" secondItem="JdA-Wy-qhg" secondAttribute="leadingMargin" constant="-16" id="2cv-u0-iKe"/>
                             <constraint firstItem="pad-wo-Olw" firstAttribute="top" secondItem="JdA-Wy-qhg" secondAttribute="topMargin" id="F2c-R0-5kf"/>
-                            <constraint firstItem="pad-wo-Olw" firstAttribute="leading" secondItem="JdA-Wy-qhg" secondAttribute="leadingMargin" constant="-16" id="GeB-4p-lDD"/>
-                            <constraint firstItem="pad-wo-Olw" firstAttribute="top" secondItem="XsJ-xB-set" secondAttribute="bottom" id="LdF-9L-AQr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pad-wo-Olw" secondAttribute="trailing" constant="-16" id="cj1-sB-nE3"/>
-                            <constraint firstItem="QC9-B9-PCN" firstAttribute="top" secondItem="pad-wo-Olw" secondAttribute="bottom" id="css-7W-ckb"/>
+                            <constraint firstItem="QC9-B9-PCN" firstAttribute="top" secondItem="pad-wo-Olw" secondAttribute="bottom" id="lhd-U0-eRc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pad-wo-Olw" secondAttribute="trailing" constant="-16" id="m88-Sd-gxH"/>
+                            <constraint firstItem="pad-wo-Olw" firstAttribute="top" secondItem="XsJ-xB-set" secondAttribute="bottom" id="oeO-CY-1hu"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -173,10 +193,10 @@
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <include reference="F2c-R0-5kf"/>
-                                <exclude reference="LdF-9L-AQr"/>
                             </mask>
                         </variation>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOH-Si-jKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
