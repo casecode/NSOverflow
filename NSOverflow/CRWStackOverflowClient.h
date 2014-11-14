@@ -12,6 +12,10 @@
 
 + (id)sharedClient;
 
+- (BOOL)isAuthenticated;
+
+- (NSURL *)oAuthRequestURL;
+
 - (void)fetchQuestionsWithTag:(NSString *)tag completion:(void (^)(NSArray *questions, NSError *error))completion;
 
 @end

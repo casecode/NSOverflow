@@ -11,25 +11,18 @@
 
 @interface SplitContainerVC ()
 
+@property (nonatomic, strong) CRWStackOverflowClient *apiClient;
 @end
 
 @implementation SplitContainerVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
     UISplitViewController *splitVC = self.childViewControllers[0];
     [splitVC setDelegate:self];
     
-    CRWStackOverflowClient *service = [CRWStackOverflowClient sharedClient];
-    [service fetchQuestionsWithTag:@"ios" completion:^(NSArray *questions, NSError *error) {
-        if (error) {
-            NSLog(@"ERROR: %@", [error localizedDescription]);
-        }
-        else {
-            NSLog(@"Question Count: %lu", questions.count);
-        }
-    }];
+    self.apiClient = [CRWStackOverflowClient sharedClient];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,7 +31,10 @@
 }
 
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
-    return YES;
+    if ([self.apiClient isAuthenticated]) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

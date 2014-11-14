@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48C11EEA1A15E40400374BA4 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C11EE91A15E40400374BA4 /* LoginVC.m */; };
 		48C1AC171A1426A200C094D1 /* CRWNSOverflowError.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C1AC161A1426A200C094D1 /* CRWNSOverflowError.m */; };
+		48C1AC1A1A1434E100C094D1 /* OAuthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C1AC191A1434E100C094D1 /* OAuthVC.m */; };
 		48CF2D791A12E08800FAC0B7 /* CRWQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */; };
 		48CF2D7C1A12F80100FAC0B7 /* CRWConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CF2D7B1A12F80100FAC0B7 /* CRWConstants.m */; };
 		48D6E6131A11561400D2EC68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E6121A11561400D2EC68 /* main.m */; };
@@ -33,8 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48C11EE81A15E40400374BA4 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		48C11EE91A15E40400374BA4 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		48C1AC151A1426A200C094D1 /* CRWNSOverflowError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWNSOverflowError.h; sourceTree = "<group>"; };
 		48C1AC161A1426A200C094D1 /* CRWNSOverflowError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRWNSOverflowError.m; sourceTree = "<group>"; };
+		48C1AC181A1434E100C094D1 /* OAuthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthVC.h; sourceTree = "<group>"; };
+		48C1AC191A1434E100C094D1 /* OAuthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthVC.m; sourceTree = "<group>"; };
 		48CF2D771A12E08800FAC0B7 /* CRWQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWQuestion.h; sourceTree = "<group>"; };
 		48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRWQuestion.m; sourceTree = "<group>"; };
 		48CF2D7A1A12F7E900FAC0B7 /* CRWConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRWConstants.h; sourceTree = "<group>"; };
@@ -147,6 +153,10 @@
 			children = (
 				48D6E63A1A1171A600D2EC68 /* SplitContainerVC.h */,
 				48D6E63B1A1171A600D2EC68 /* SplitContainerVC.m */,
+				48C1AC181A1434E100C094D1 /* OAuthVC.h */,
+				48C1AC191A1434E100C094D1 /* OAuthVC.m */,
+				48C11EE81A15E40400374BA4 /* LoginVC.h */,
+				48C11EE91A15E40400374BA4 /* LoginVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -277,6 +287,8 @@
 				48D6E6441A11924E00D2EC68 /* CRWStackOverflowClient.m in Sources */,
 				48D6E6161A11561400D2EC68 /* AppDelegate.m in Sources */,
 				48C1AC171A1426A200C094D1 /* CRWNSOverflowError.m in Sources */,
+				48C11EEA1A15E40400374BA4 /* LoginVC.m in Sources */,
+				48C1AC1A1A1434E100C094D1 /* OAuthVC.m in Sources */,
 				48D6E63C1A1171A600D2EC68 /* SplitContainerVC.m in Sources */,
 				48D6E6191A11561400D2EC68 /* NSOverflow.xcdatamodeld in Sources */,
 				48D6E6131A11561400D2EC68 /* main.m in Sources */,

@@ -10,13 +10,16 @@
 #import "CRWNSOverflowError.h"
 #import "CRWQuestion.h"
 
-static NSString * const kStackExchangeAPIBaseURL = @"https://api.stackexchange.com/2.2";
-static NSString * const kStackExchangeAPIKey = @"eecC8QAViP40PkTd16RXrQ((";
+static NSString * const kAPIBaseURL = @"https://api.stackexchange.com/2.2";
+static NSString * const kPublicKey = @"eecC8QAViP40PkTd16RXrQ((";
+static NSString * const kClientID = @"3822";
+static NSString * const kOAuthURL = @"https://stackexchange.com/oauth/dialog";
+static NSString * const kOAuthRedirectURI = @"https://stackexchange.com/oauth/login_success";
 
 @interface CRWStackOverflowClient ()
 
-- (void)fetchObjectsAtURL:(NSString *)url completion:(void (^)(NSData *data, NSError *error))completion;
-- (NSMutableArray *)parseQuestionsFromJSON:(NSData *)questionData error:(NSError **)error;
+@property (nonatomic, strong) NSString *token;
+
 @end
 
 
@@ -32,56 +35,80 @@ static NSString * const kStackExchangeAPIKey = @"eecC8QAViP40PkTd16RXrQ((";
     return _sharedClient;
 }
 
+#pragma mark - Authentication
+
+- (BOOL)isAuthenticated {
+    if (self.token) { return YES; }
+    
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    if (token) {
+        self.token = token;
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (NSURL *)oAuthRequestURL {
+    NSDictionary *params = @{@"client_id": kClientID,
+                             @"scope": @"read_inbox",
+                             @"redirect_uri": kOAuthRedirectURI};
+    NSString *queryString = [self buildQueryStringWithParams:params];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@", kOAuthURL, queryString];
+    return [NSURL URLWithString:urlString];
+}
+
+
+#pragma mark - Fetch Requests
+
 - (void)fetchQuestionsWithTag:(NSString *)tag completion:(void (^)(NSArray *, NSError *))completion {
     
-    NSString *resourcePath = @"/questions";
-    NSString *params = [NSString stringWithFormat:@"?order=desc&tagged=%@&site=stackoverflow&key=%@", tag, kStackExchangeAPIKey];
-    NSString *url = [NSString stringWithFormat:@"%@%@%@", kStackExchangeAPIBaseURL, resourcePath, params];
+    NSURL *url = [self questionURLForTag:tag];
     
     [self fetchObjectsAtURL:url completion:^(NSData *data, NSError *error) {
-        NSError *fetchError = nil;
+        NSError *requestError = nil;
         NSArray *questions = nil;
         
         if (error) {
-            fetchError = error;
+            requestError = error;
         }
         else {
-            questions = [self parseQuestionsFromJSON:data error:&fetchError];
+            questions = [self parseQuestionsFromJSON:data error:&requestError];
         }
         
-        if (fetchError) {
+        if (requestError) {
             NSLog(@"Error: %@", error.localizedDescription);
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(questions, fetchError);
+            completion(questions, requestError);
         });
     }];
 }
 
-- (void)fetchObjectsAtURL:(NSString *)url completion:(void (^)(NSData *, NSError *))completion {
+#pragma mark - Private
+
+- (void)fetchObjectsAtURL:(NSURL *)url completion:(void (^)(NSData *, NSError *))completion {
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
-        NSError *fetchError = nil;
+        NSError *requestError = nil;
         NSData *fetchData = nil;
         
         if (error) {
             NSLog(@"%@", [error localizedDescription]);
-            fetchError = error;
+            requestError = error;
         }
         else {
             if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
                 NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
                 
                 if (httpResponse.statusCode >= 400) {
-                    NSDictionary *userInfo = @{
-                        @"statusCode": @(httpResponse.statusCode),
-                        NSLocalizedDescriptionKey: [error localizedDescription]
-                    };
-                    
-                    fetchError = [CRWNSOverflowError fetchErrorWithUserInfo:userInfo];
+                    NSDictionary *userInfo = @{@"statusCode": @(httpResponse.statusCode),
+                                               NSLocalizedDescriptionKey: @"Error fetching data"};
+                    requestError = [CRWNSOverflowError fetchErrorWithUserInfo:userInfo];
                 }
                 else {
                     fetchData = data;
@@ -89,7 +116,7 @@ static NSString * const kStackExchangeAPIKey = @"eecC8QAViP40PkTd16RXrQ((";
             }
         }
         
-        completion(fetchData, fetchError);
+        completion(fetchData, requestError);
         
     }];
     
@@ -112,13 +139,41 @@ static NSString * const kStackExchangeAPIKey = @"eecC8QAViP40PkTd16RXrQ((";
                     [questions addObject:question];
                 }
             }];
-        } else {
+        }
+        else {
             NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Error parsing question data"};
             *error = [CRWNSOverflowError parseErrorWithUserInfo:userInfo];
         }
     }
     
     return questions;
+}
+
+- (NSString *)buildQueryStringWithParams:(NSDictionary *)params {
+    
+    __block NSString *queryString = [NSString stringWithFormat:@"?site=stackoverflow&key=%@", kPublicKey];
+    [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        NSString *param = [NSString stringWithFormat:@"&%@=%@", key, obj];
+        queryString = [queryString stringByAppendingString:param];
+    }];
+    
+    if (self.token) {
+        NSString *tokenParam = [NSString stringWithFormat:@"&access_token=%@", self.token];
+        queryString = [queryString stringByAppendingString:tokenParam];
+    }
+    
+    return queryString;
+}
+
+- (NSURL *)questionURLForTag:(NSString *)tag {
+    NSString *resourcePath = @"/questions";
+    NSDictionary *params = @{@"order": @"desc",
+                             @"sort": @"activity",
+                             @"tagged": tag};
+    NSString *queryString = [self buildQueryStringWithParams:params];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@%@", kAPIBaseURL, resourcePath, queryString];
+    
+    return [NSURL URLWithString:urlString];
 }
 
 @end
