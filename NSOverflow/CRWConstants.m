@@ -9,3 +9,5 @@
 #import "CRWConstants.h"
 
 NSString * const kNSOverflowDomain = @"com.casecode.NSOverflow";
+
+NSString * const kSOTokenKey = @"token";

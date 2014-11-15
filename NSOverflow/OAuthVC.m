@@ -7,6 +7,7 @@
 //
 
 #import "OAuthVC.h"
+#import "CRWConstants.h"
 #import "CRWStackOverflowClient.h"
 #import <WebKit/WebKit.h>
 
@@ -65,7 +66,7 @@
         NSString *token = [[[params firstObject] componentsSeparatedByString:@"="] lastObject];
         
         if (token) {
-            [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"token"];
+            [[NSUserDefaults standardUserDefaults] setObject:token forKey:kSOTokenKey];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
             [self dismissViewControllerAnimated:YES completion:nil];

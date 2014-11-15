@@ -7,6 +7,7 @@
 //
 
 #import "CRWStackOverflowClient.h"
+#import "CRWConstants.h"
 #import "CRWNSOverflowError.h"
 #import "CRWQuestion.h"
 
@@ -40,7 +41,7 @@ static NSString * const kOAuthRedirectURI = @"https://stackexchange.com/oauth/lo
 - (BOOL)isAuthenticated {
     if (self.token) { return YES; }
     
-    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:kSOTokenKey];
     if (token) {
         self.token = token;
         return YES;
