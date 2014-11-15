@@ -10,8 +10,14 @@
 
 @interface CRWQuestion : NSObject
 
+@property (nonatomic, readonly, assign) NSUInteger questionID;
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly, copy) NSString *link;
+@property (nonatomic, readonly, copy) NSArray *tags;
+@property (nonatomic, readonly, copy) NSDate *dateCreated;
+
+@property (nonatomic, readonly, copy) NSString *ownerName;
+@property (nonatomic, readonly, copy) NSString *ownerID;
 
 + (CRWQuestion *)questionFromDictionary:(NSDictionary *)dictionary;
 
