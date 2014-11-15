@@ -7,6 +7,7 @@
 //
 
 #import "CRWStackOverflowClient.h"
+#import "CRWStackOverflowClient_Private.h"
 #import "CRWConstants.h"
 #import "CRWNSOverflowError.h"
 #import "CRWQuestion.h"

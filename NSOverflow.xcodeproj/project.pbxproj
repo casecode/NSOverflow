@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48BA751E1A18148C0064FCF7 /* ParsingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BA751D1A18148C0064FCF7 /* ParsingTests.m */; };
+		48BA75201A1814A60064FCF7 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 48BA751F1A1814A60064FCF7 /* questions.json */; };
 		48C11EEA1A15E40400374BA4 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C11EE91A15E40400374BA4 /* LoginVC.m */; };
 		48C1AC171A1426A200C094D1 /* CRWNSOverflowError.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C1AC161A1426A200C094D1 /* CRWNSOverflowError.m */; };
 		48C1AC1A1A1434E100C094D1 /* OAuthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C1AC191A1434E100C094D1 /* OAuthVC.m */; };
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48BA75161A1805A00064FCF7 /* CRWStackOverflowClient_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRWStackOverflowClient_Private.h; sourceTree = "<group>"; };
+		48BA751D1A18148C0064FCF7 /* ParsingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsingTests.m; sourceTree = "<group>"; };
+		48BA751F1A1814A60064FCF7 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		48C11EE81A15E40400374BA4 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		48C11EE91A15E40400374BA4 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		48C1AC151A1426A200C094D1 /* CRWNSOverflowError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWNSOverflowError.h; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				48D6E62F1A11561400D2EC68 /* NSOverflowTests.m */,
+				48BA751D1A18148C0064FCF7 /* ParsingTests.m */,
 				48D6E62D1A11561400D2EC68 /* Supporting Files */,
 			);
 			path = NSOverflowTests;
@@ -143,6 +149,7 @@
 		48D6E62D1A11561400D2EC68 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				48BA751F1A1814A60064FCF7 /* questions.json */,
 				48D6E62E1A11561400D2EC68 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -177,6 +184,7 @@
 			children = (
 				48D6E6421A11924E00D2EC68 /* CRWStackOverflowClient.h */,
 				48D6E6431A11924E00D2EC68 /* CRWStackOverflowClient.m */,
+				48BA75161A1805A00064FCF7 /* CRWStackOverflowClient_Private.h */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -271,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48BA75201A1814A60064FCF7 /* questions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48BA751E1A18148C0064FCF7 /* ParsingTests.m in Sources */,
 				48D6E6301A11561400D2EC68 /* NSOverflowTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

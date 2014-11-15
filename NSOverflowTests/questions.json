@@ -1,0 +1,57 @@
+{
+  "items": [
+    {
+      "tags": [
+        "ios",
+        "nsfetchedresultscontrolle",
+        "fast-enumeration"
+      ],
+      "owner": {
+        "reputation": 2206,
+        "user_id": 499027,
+        "user_type": "registered",
+        "accept_rate": 91,
+        "profile_image": "http://i.stack.imgur.com/7sZpp.jpg?s=128&g=1",
+        "display_name": "logixologist",
+        "link": "http://stackoverflow.com/users/499027/logixologist"
+      },
+      "is_answered": false,
+      "view_count": 6,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1416087876,
+      "creation_date": 1416087711,
+      "question_id": 26951039,
+      "link": "http://stackoverflow.com/questions/26951039/fast-enumeration-of-a-nsfetchedresult",
+      "title": "Fast Enumeration of a NSFetchedResult"
+    },
+    {
+      "tags": [
+        "ios",
+        "objective-c",
+        "uikit",
+        "core-graphics",
+        "cgcontext"
+      ],
+      "owner": {
+        "reputation": 26,
+        "user_id": 2976878,
+        "user_type": "registered",
+        "accept_rate": 88,
+        "profile_image": "https://www.gravatar.com/avatar/ecb00d5fba1c063aa410748d0beed86f?s=128&d=identicon&r=PG&f=1",
+        "display_name": "originaluser2",
+        "link": "http://stackoverflow.com/users/2976878/originaluser2"
+      },
+      "is_answered": false,
+      "view_count": 18,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1416087858,
+      "creation_date": 1415999267,
+      "last_edit_date": 1416080820,
+      "question_id": 26938886,
+      "link": "http://stackoverflow.com/questions/26938886/core-graphics-cgcontextclip-edge-unwanted-weird-antialiasing",
+      "title": "Core Graphics: CGContextClip() Edge Unwanted Weird Antialiasing"
+    }
+  ]
+}
