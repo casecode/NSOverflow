@@ -87,6 +87,30 @@ static NSString * const kOAuthRedirectURI = @"https://stackexchange.com/oauth/lo
     }];
 }
 
+- (void)fetchAuthenticatedUser:(void (^)(CRWUser *, NSError *))completion {
+    
+    NSURL *url = [self authenticatedUserURL];
+    
+    [self fetchObjectsAtURL:url completion:^(NSData *data, NSError *error) {
+        NSError *requestError = nil;
+        CRWUser *user = nil;
+        
+        if (error) {
+            requestError = error;
+        }
+        else {
+            user = [self parseUserFromJSON:data error:&requestError];
+        }
+        
+        if (requestError) {
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(user, requestError);
+        });
+    }];
+}
+
 #pragma mark - Private
 
 - (void)fetchObjectsAtURL:(NSURL *)url completion:(void (^)(NSData *, NSError *))completion {
@@ -151,6 +175,27 @@ static NSString * const kOAuthRedirectURI = @"https://stackexchange.com/oauth/lo
     return questions;
 }
 
+- (CRWUser *)parseUserFromJSON:(NSData *)userData error:(NSError *__autoreleasing *)error {
+    CRWUser *user = nil;
+    
+    id jsonData = [NSJSONSerialization JSONObjectWithData:userData options:0 error:error];
+    
+    if (!*error) {
+        if ([jsonData isKindOfClass:[NSDictionary class]]) {
+            NSArray *items = [(NSDictionary *)jsonData objectForKey:@"items"];
+            if ([items.firstObject isKindOfClass:[NSDictionary class]]) {
+                user = [[CRWUser alloc] initWithDictionary:(NSDictionary *)items.firstObject];
+            }
+        }
+    }
+    else {
+        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Error parsing user data"};
+        *error = [CRWNSOverflowError parseErrorWithUserInfo:userInfo];
+    }
+    
+    return user;
+}
+
 - (NSString *)buildQueryStringWithParams:(NSDictionary *)params {
     
     __block NSString *queryString = [NSString stringWithFormat:@"?site=stackoverflow&key=%@", kPublicKey];
@@ -175,6 +220,16 @@ static NSString * const kOAuthRedirectURI = @"https://stackexchange.com/oauth/lo
     NSString *queryString = [self buildQueryStringWithParams:params];
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@", kAPIBaseURL, resourcePath, queryString];
 
+    return [NSURL URLWithString:urlString];
+}
+
+- (NSURL *)authenticatedUserURL {
+    NSString *resourcePath = @"/me";
+    NSDictionary *params = @{@"order": @"desc",
+                             @"sort": @"reputation"};
+    NSString *queryString = [self buildQueryStringWithParams:params];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@%@", kAPIBaseURL, resourcePath, queryString];
+    NSLog(@"%@", urlString);
     return [NSURL URLWithString:urlString];
 }
 

@@ -12,8 +12,8 @@
 
 @property (nonatomic, readonly, assign) NSUInteger userID;
 @property (nonatomic, readonly, strong) NSString *displayName;
-@property (nonatomic, readonly, strong) NSString *location;
-@property (nonatomic, readonly, strong) NSDictionary *badgeCounts;
+@property (nonatomic, readonly, strong) NSString *imageURL;
+@property (nonatomic, readonly, copy) NSDate *dateCreated;
 
 - (instancetype)initWithDictionary:(NSDictionary *)data;
 

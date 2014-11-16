@@ -35,7 +35,7 @@
     self.webView.navigationDelegate = self;
     
     if ([self navigationController]) {
-        self.title = @"Login";
+        self.title = NSLocalizedString(@"Login", nil);
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(navigateBack:)];
         self.navigationItem.leftBarButtonItem = backButton;
     }

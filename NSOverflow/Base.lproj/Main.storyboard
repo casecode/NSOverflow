@@ -168,6 +168,69 @@
             </objects>
             <point key="canvasLocation" x="1980" y="-63"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="wrG-el-eie">
+            <objects>
+                <viewController storyboardIdentifier="ProfileVC" title="Profile" id="dlH-i1-8mp" customClass="ProfileVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IOp-VO-Bge"/>
+                        <viewControllerLayoutGuide type="bottom" id="FE5-pu-o78"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kL0-Zc-71W">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0B9-kb-PCN">
+                                <rect key="frame" x="16" y="72" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="9j2-Jy-X4i"/>
+                                    <constraint firstAttribute="width" constant="150" id="a47-BV-nQX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X86-GM-sIW">
+                                <rect key="frame" x="174" y="72" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member Since" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rje-Ox-gU2">
+                                <rect key="frame" x="174" y="101" width="79" height="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creation Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Erz-8y-5wK">
+                                <rect key="frame" x="261" y="101" width="74" height="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Erz-8y-5wK" firstAttribute="leading" secondItem="rje-Ox-gU2" secondAttribute="trailing" constant="8" id="7hm-IY-j2z"/>
+                            <constraint firstItem="X86-GM-sIW" firstAttribute="top" secondItem="IOp-VO-Bge" secondAttribute="bottom" constant="8" id="Nf5-aV-adr"/>
+                            <constraint firstItem="0B9-kb-PCN" firstAttribute="top" secondItem="IOp-VO-Bge" secondAttribute="bottom" constant="8" id="Vdk-df-E57"/>
+                            <constraint firstItem="Erz-8y-5wK" firstAttribute="leading" secondItem="rje-Ox-gU2" secondAttribute="trailing" constant="8" id="WQ0-cI-iCa"/>
+                            <constraint firstItem="rje-Ox-gU2" firstAttribute="leading" secondItem="0B9-kb-PCN" secondAttribute="trailing" constant="8" id="Yga-zJ-iPd"/>
+                            <constraint firstItem="rje-Ox-gU2" firstAttribute="top" secondItem="X86-GM-sIW" secondAttribute="bottom" constant="8" id="cQY-Tt-a3G"/>
+                            <constraint firstItem="X86-GM-sIW" firstAttribute="leading" secondItem="0B9-kb-PCN" secondAttribute="trailing" constant="8" id="fSZ-OL-dvv"/>
+                            <constraint firstItem="0B9-kb-PCN" firstAttribute="leading" secondItem="kL0-Zc-71W" secondAttribute="leadingMargin" id="p4p-Fd-O4T"/>
+                            <constraint firstItem="rje-Ox-gU2" firstAttribute="top" secondItem="Erz-8y-5wK" secondAttribute="top" id="w18-mg-L4c"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="creationDateLabel" destination="Erz-8y-5wK" id="jPU-ce-0Ev"/>
+                        <outlet property="memberSinceLabel" destination="rje-Ox-gU2" id="8RD-ey-SEh"/>
+                        <outlet property="userImageView" destination="0B9-kb-PCN" id="8S6-EU-plJ"/>
+                        <outlet property="userNameLabel" destination="X86-GM-sIW" id="LCz-Y9-pIq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6C-bh-oNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="600"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="mzW-8n-Ivi">
             <objects>

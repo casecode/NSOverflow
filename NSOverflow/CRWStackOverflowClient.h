@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CRWUser.h"
 
 @interface CRWStackOverflowClient : NSObject
 
@@ -17,5 +18,7 @@
 - (NSURL *)oAuthRequestURL;
 
 - (void)fetchQuestionsWithTag:(NSString *)tag completion:(void (^)(NSArray *questions, NSError *error))completion;
+
+- (void)fetchAuthenticatedUser:(void (^)(CRWUser *user, NSError *error))completion;
 
 @end

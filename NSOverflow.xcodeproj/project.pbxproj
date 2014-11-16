@@ -20,6 +20,7 @@
 		48C8BFAF1A187AD1007EC28F /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C8BFAE1A187AD1007EC28F /* QuestionCell.m */; };
 		48C8BFB11A187AE4007EC28F /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C8BFB01A187AE4007EC28F /* QuestionCell.xib */; };
 		48C8BFB71A188AC6007EC28F /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C8BFB61A188AC6007EC28F /* NSString+Regex.m */; };
+		48C8BFBA1A18AFEE007EC28F /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C8BFB91A18AFEE007EC28F /* ProfileVC.m */; };
 		48CF2D791A12E08800FAC0B7 /* CRWQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */; };
 		48CF2D7C1A12F80100FAC0B7 /* CRWConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CF2D7B1A12F80100FAC0B7 /* CRWConstants.m */; };
 		48D6E6131A11561400D2EC68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E6121A11561400D2EC68 /* main.m */; };
@@ -70,6 +71,8 @@
 		48C8BFB01A187AE4007EC28F /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		48C8BFB51A188AC6007EC28F /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
 		48C8BFB61A188AC6007EC28F /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
+		48C8BFB81A18AFEE007EC28F /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
+		48C8BFB91A18AFEE007EC28F /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
 		48CF2D771A12E08800FAC0B7 /* CRWQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWQuestion.h; sourceTree = "<group>"; };
 		48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRWQuestion.m; sourceTree = "<group>"; };
 		48CF2D7A1A12F7E900FAC0B7 /* CRWConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRWConstants.h; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				48C8BF921A1820EC007EC28F /* MenuTableVC.m */,
 				48C8BFAA1A187909007EC28F /* QuestionsSearchVC.h */,
 				48C8BFAB1A187909007EC28F /* QuestionsSearchVC.m */,
+				48C8BFB81A18AFEE007EC28F /* ProfileVC.h */,
+				48C8BFB91A18AFEE007EC28F /* ProfileVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				48C11EEA1A15E40400374BA4 /* LoginVC.m in Sources */,
 				48C8BF991A18234C007EC28F /* MenuCell.m in Sources */,
 				48C1AC1A1A1434E100C094D1 /* OAuthVC.m in Sources */,
+				48C8BFBA1A18AFEE007EC28F /* ProfileVC.m in Sources */,
 				48D6E63C1A1171A600D2EC68 /* SplitContainerVC.m in Sources */,
 				48D6E6191A11561400D2EC68 /* NSOverflow.xcdatamodeld in Sources */,
 				48D6E6131A11561400D2EC68 /* main.m in Sources */,

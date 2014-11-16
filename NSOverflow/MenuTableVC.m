@@ -28,7 +28,7 @@
     NSDictionary *searchQuestionsItem = @{@"title": NSLocalizedString(@"Search Questions", nil),
                                           @"reuseID": kReIDQuestionsSearchVC};
     NSDictionary *myProfileItem = @{@"title": NSLocalizedString(@"My Profile", nil),
-                                    @"reuseID": kReIDQuestionsSearchVC};
+                                    @"reuseID": kReIDProfileVC};
     self.menuItems = @[searchQuestionsItem, myProfileItem];
     
     self.title = NSLocalizedString(@"Menu", @"Main menu items");

@@ -8,10 +8,8 @@
 
 // ***NOTE: Localized string work on devices, but not in simulator
 
-// Navbar titles
 "Menu" = "Benutzermenü";
 "Login" = "Einloggen";
-
-// Menu items
+"Questions" = "Fragen";
 "Search Questions" = "Fragen Suchen";
 "My Profile" = "Mein Profil";

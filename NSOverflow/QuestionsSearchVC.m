@@ -70,7 +70,7 @@
     NSString *tagQuery = searchBar.text;
     
     if (tagQuery.length > 0) {
-        NSLog(@"HELLO");
+
         [_apiClient fetchQuestionsWithTag:tagQuery completion:^(NSArray *questions, NSError *error) {
             if (error) {
                 NSLog(@"Error: %@", [error localizedDescription]);
