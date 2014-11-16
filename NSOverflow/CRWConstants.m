@@ -16,3 +16,4 @@ NSString * const kReIDMenuCell = @"MenuCell";
 NSString * const kReIDQuestionCell = @"QuestionCell";
 NSString * const kReIDQuestionsSearchVC = @"QuestionsSearchVC";
 NSString * const kReIDProfileVC = @"ProfileVC";
+NSString * const kReIDLoginVC = @"LoginVC";

@@ -8,7 +8,7 @@
         <!--Login-->
         <scene sceneID="DUf-hF-i36">
             <objects>
-                <viewController title="Login" id="IMj-pV-gWe" customClass="LoginVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" title="Login" id="IMj-pV-gWe" customClass="LoginVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YhN-QO-K7c"/>
                         <viewControllerLayoutGuide type="bottom" id="Cb4-Wd-IBa"/>

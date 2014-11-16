@@ -10,9 +10,12 @@
 #import "CRWConstants.h"
 #import "MenuCell.h"
 #import "QuestionsSearchVC.h"
+#import "CRWStackOverflowClient.h"
+#import "LoginVC.h"
 
 @interface MenuTableVC ()
 
+@property CRWStackOverflowClient *apiClient;
 @property (nonatomic, copy) NSArray *menuItems;
 
 @end
@@ -32,7 +35,8 @@
     self.menuItems = @[searchQuestionsItem, myProfileItem];
     
     self.title = NSLocalizedString(@"Menu", @"Main menu items");
-
+    
+    self.apiClient = [CRWStackOverflowClient sharedClient];
 }
 
 #pragma mark - Table view data source
@@ -52,9 +56,15 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *item = self.menuItems[indexPath.row];
-    id destinationVC = [self.storyboard instantiateViewControllerWithIdentifier:[item objectForKey:@"reuseID"]];
-    [self.navigationController pushViewController:destinationVC animated:YES];
+    if ([_apiClient isAuthenticated]) {
+        NSDictionary *item = self.menuItems[indexPath.row];
+        id destinationVC = [self.storyboard instantiateViewControllerWithIdentifier:[item objectForKey:@"reuseID"]];
+        [self showDetailViewController:destinationVC sender:self];
+    }
+    else {
+        LoginVC *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:kReIDLoginVC];
+        [self showDetailViewController:loginVC sender:self];
+    }
 }
 
 @end

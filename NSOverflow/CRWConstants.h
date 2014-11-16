@@ -16,3 +16,4 @@ FOUNDATION_EXPORT NSString * const kReIDMenuCell;
 FOUNDATION_EXPORT NSString * const kReIDQuestionCell;
 FOUNDATION_EXPORT NSString * const kReIDQuestionsSearchVC;
 FOUNDATION_EXPORT NSString * const kReIDProfileVC;
+FOUNDATION_EXPORT NSString * const kReIDLoginVC;
