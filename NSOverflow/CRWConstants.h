@@ -10,3 +10,6 @@
 
 FOUNDATION_EXPORT NSString * const kNSOverflowDomain;
 FOUNDATION_EXPORT NSString * const kSOTokenKey;
+
+// ReuseIdentifiers
+FOUNDATION_EXPORT NSString * const kReIDMenuCell;

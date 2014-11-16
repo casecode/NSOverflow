@@ -12,6 +12,10 @@
 		48C11EEA1A15E40400374BA4 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C11EE91A15E40400374BA4 /* LoginVC.m */; };
 		48C1AC171A1426A200C094D1 /* CRWNSOverflowError.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C1AC161A1426A200C094D1 /* CRWNSOverflowError.m */; };
 		48C1AC1A1A1434E100C094D1 /* OAuthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C1AC191A1434E100C094D1 /* OAuthVC.m */; };
+		48C8BF931A1820EC007EC28F /* MenuTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C8BF921A1820EC007EC28F /* MenuTableVC.m */; };
+		48C8BF961A182325007EC28F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C8BF951A182325007EC28F /* MenuCell.xib */; };
+		48C8BF991A18234C007EC28F /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C8BF981A18234C007EC28F /* MenuCell.m */; };
+		48C8BFA51A183259007EC28F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C8BFA71A183259007EC28F /* Localizable.strings */; };
 		48CF2D791A12E08800FAC0B7 /* CRWQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */; };
 		48CF2D7C1A12F80100FAC0B7 /* CRWConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CF2D7B1A12F80100FAC0B7 /* CRWConstants.m */; };
 		48D6E6131A11561400D2EC68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E6121A11561400D2EC68 /* main.m */; };
@@ -46,6 +50,15 @@
 		48C1AC161A1426A200C094D1 /* CRWNSOverflowError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRWNSOverflowError.m; sourceTree = "<group>"; };
 		48C1AC181A1434E100C094D1 /* OAuthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthVC.h; sourceTree = "<group>"; };
 		48C1AC191A1434E100C094D1 /* OAuthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthVC.m; sourceTree = "<group>"; };
+		48C8BF911A1820EC007EC28F /* MenuTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableVC.h; sourceTree = "<group>"; };
+		48C8BF921A1820EC007EC28F /* MenuTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableVC.m; sourceTree = "<group>"; };
+		48C8BF951A182325007EC28F /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		48C8BF971A18234C007EC28F /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		48C8BF981A18234C007EC28F /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		48C8BFA31A18321B007EC28F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		48C8BFA41A18321B007EC28F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		48C8BFA81A183261007EC28F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		48C8BFA91A183265007EC28F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48CF2D771A12E08800FAC0B7 /* CRWQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWQuestion.h; sourceTree = "<group>"; };
 		48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRWQuestion.m; sourceTree = "<group>"; };
 		48CF2D7A1A12F7E900FAC0B7 /* CRWConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRWConstants.h; sourceTree = "<group>"; };
@@ -88,6 +101,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48C8BF941A18230D007EC28F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48C8BF971A18234C007EC28F /* MenuCell.h */,
+				48C8BF981A18234C007EC28F /* MenuCell.m */,
+				48C8BF951A182325007EC28F /* MenuCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		48D6E6041A11561400D2EC68 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +132,7 @@
 		48D6E60F1A11561400D2EC68 /* NSOverflow */ = {
 			isa = PBXGroup;
 			children = (
+				48C8BF941A18230D007EC28F /* Views */,
 				48D6E6391A1157C400D2EC68 /* ViewControllers */,
 				48D6E63D1A11753A00D2EC68 /* Models */,
 				48D6E6411A11920900D2EC68 /* Services */,
@@ -123,6 +147,7 @@
 				48D6E6221A11561400D2EC68 /* LaunchScreen.xib */,
 				48D6E6171A11561400D2EC68 /* NSOverflow.xcdatamodeld */,
 				48D6E6101A11561400D2EC68 /* Supporting Files */,
+				48C8BFA71A183259007EC28F /* Localizable.strings */,
 			);
 			path = NSOverflow;
 			sourceTree = "<group>";
@@ -164,6 +189,8 @@
 				48C1AC191A1434E100C094D1 /* OAuthVC.m */,
 				48C11EE81A15E40400374BA4 /* LoginVC.h */,
 				48C11EE91A15E40400374BA4 /* LoginVC.m */,
+				48C8BF911A1820EC007EC28F /* MenuTableVC.h */,
+				48C8BF921A1820EC007EC28F /* MenuTableVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -269,7 +296,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C8BFA51A183259007EC28F /* Localizable.strings in Resources */,
 				48D6E61F1A11561400D2EC68 /* Main.storyboard in Resources */,
+				48C8BF961A182325007EC28F /* MenuCell.xib in Resources */,
 				48D6E6241A11561400D2EC68 /* LaunchScreen.xib in Resources */,
 				48D6E6211A11561400D2EC68 /* Images.xcassets in Resources */,
 			);
@@ -296,7 +325,9 @@
 				48D6E6441A11924E00D2EC68 /* CRWStackOverflowClient.m in Sources */,
 				48D6E6161A11561400D2EC68 /* AppDelegate.m in Sources */,
 				48C1AC171A1426A200C094D1 /* CRWNSOverflowError.m in Sources */,
+				48C8BF931A1820EC007EC28F /* MenuTableVC.m in Sources */,
 				48C11EEA1A15E40400374BA4 /* LoginVC.m in Sources */,
+				48C8BF991A18234C007EC28F /* MenuCell.m in Sources */,
 				48C1AC1A1A1434E100C094D1 /* OAuthVC.m in Sources */,
 				48D6E63C1A1171A600D2EC68 /* SplitContainerVC.m in Sources */,
 				48D6E6191A11561400D2EC68 /* NSOverflow.xcdatamodeld in Sources */,
@@ -324,10 +355,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		48C8BFA71A183259007EC28F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48C8BFA81A183261007EC28F /* en */,
+				48C8BFA91A183265007EC28F /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		48D6E61D1A11561400D2EC68 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				48D6E61E1A11561400D2EC68 /* Base */,
+				48C8BFA31A18321B007EC28F /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -336,6 +377,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				48D6E6231A11561400D2EC68 /* Base */,
+				48C8BFA41A18321B007EC28F /* de */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

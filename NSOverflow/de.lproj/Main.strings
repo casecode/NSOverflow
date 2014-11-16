@@ -1,0 +1,27 @@
+
+/* Class = "IBUIButton"; normalTitle = "Log Into StackOverflow"; ObjectID = "6ee-XU-Ds2"; */
+"6ee-XU-Ds2.normalTitle" = "Log Into StackOverflow";
+
+/* Class = "IBUITableViewController"; title = "Menu"; ObjectID = "AsL-fH-HSo"; */
+"AsL-fH-HSo.title" = "Menu";
+
+/* Class = "IBUILabel"; text = "It is recommended that you log into StackOverflow in order to increase your rate limit."; ObjectID = "I8Z-1I-1t6"; */
+"I8Z-1I-1t6.text" = "It is recommended that you log into StackOverflow in order to increase your rate limit.";
+
+/* Class = "IBUIViewController"; title = "Login"; ObjectID = "IMj-pV-gWe"; */
+"IMj-pV-gWe.title" = "Login";
+
+/* Class = "IBUINavigationItem"; title = "Root View Controller"; ObjectID = "Xe3-NZ-sFv"; */
+"Xe3-NZ-sFv.title" = "Root View Controller";
+
+/* Class = "IBUILabel"; text = "You are authenticated with StackOverflow."; ObjectID = "ay2-gS-jr2"; */
+"ay2-gS-jr2.text" = "You are authenticated with StackOverflow.";
+
+/* Class = "IBUIViewController"; title = "SplitView Container"; ObjectID = "cwo-3D-91r"; */
+"cwo-3D-91r.title" = "SplitView Container";
+
+/* Class = "IBUIViewController"; title = "OAuth"; ObjectID = "rpF-Z1-eEC"; */
+"rpF-Z1-eEC.title" = "OAuth";
+
+/* Class = "IBUIViewController"; title = "Questions"; ObjectID = "vZt-U5-txH"; */
+"vZt-U5-txH.title" = "Questions";

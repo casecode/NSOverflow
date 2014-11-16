@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  NSOverflow
+
+  Created by Casey R White on 11/15/14.
+  Copyright (c) 2014 casecode. All rights reserved.
+*/
+
+// Navbar titles
+"Menu" = "Menu";
+"Login" = "Login";
+
+// Menu items
+"Search Questions" = "Search Questions";
+"My Profile" = "My Profile";
+
