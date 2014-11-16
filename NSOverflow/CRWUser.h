@@ -10,11 +10,10 @@
 
 @interface CRWUser : NSObject
 
-@property (nonatomic, strong) NSNumber *userID;
-@property (nonatomic, strong) NSString *displayName;
-@property (nonatomic, strong) NSString *location;
-@property (nonatomic, strong) NSString *profileImageURL;
-@property (nonatomic, strong) NSDictionary *badgeCounts;
+@property (nonatomic, readonly, assign) NSUInteger userID;
+@property (nonatomic, readonly, strong) NSString *displayName;
+@property (nonatomic, readonly, strong) NSString *location;
+@property (nonatomic, readonly, strong) NSDictionary *badgeCounts;
 
 - (instancetype)initWithDictionary:(NSDictionary *)data;
 

@@ -8,21 +8,23 @@
 
 #import "CRWUser.h"
 
+@interface CRWUser ()
+
+@property (nonatomic, assign) NSUInteger userID;
+@property (nonatomic, strong) NSString *displayName;
+@property (nonatomic, strong) NSString *location;
+@property (nonatomic, strong) NSDictionary *badgeCounts;
+
+@end
+
 @implementation CRWUser
 
-- (instancetype)initWithDictionary:(NSDictionary *)data {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     if (self = [super init]) {
-        self.userID = (NSNumber *)data[@"user_id"];
-        self.displayName = (NSString *)data[@""];
-        self.location = (NSString *)data[@"location"];
-        self.profileImageURL = (NSString *)data[@"profile_image"];
-        
-        NSDictionary *badgeDict = (NSDictionary *)data[@"badge_counts"];
-        self.badgeCounts = @{
-             @"bronze" : (NSNumber *)badgeDict[@"bronze"],
-             @"silver" : (NSNumber *)badgeDict[@"silver"],
-             @"gold"   : (NSNumber *)badgeDict[@"gold"]
-        };
+        self.userID = [[dictionary objectForKey:@"user_id"] unsignedIntegerValue];
+        self.displayName = [dictionary objectForKey:@"diplay_name"];
+        self.location = [dictionary objectForKey:@"location"];
+        self.badgeCounts = [dictionary objectForKey:@"badge_counts"];
     }
     
     return self;

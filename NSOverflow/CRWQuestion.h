@@ -17,7 +17,7 @@
 @property (nonatomic, readonly, copy) NSDate *dateCreated;
 
 @property (nonatomic, readonly, copy) NSString *ownerName;
-@property (nonatomic, readonly, copy) NSString *ownerID;
+@property (nonatomic, readonly, assign) NSUInteger ownerID;
 
 + (CRWQuestion *)questionFromDictionary:(NSDictionary *)dictionary;
 

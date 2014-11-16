@@ -6,6 +6,8 @@
   Copyright (c) 2014 casecode. All rights reserved.
 */
 
+// ***NOTE: Localized string work on devices, but not in simulator
+
 // Navbar titles
 "Menu" = "Menu";
 "Login" = "Login";

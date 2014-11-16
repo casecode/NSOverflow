@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSDate *dateCreated;
 
 @property (nonatomic, copy) NSString *ownerName;
-@property (nonatomic, copy) NSString *ownerID;
+@property (nonatomic, assign) NSUInteger ownerID;
 
 @end
 
@@ -27,7 +27,7 @@
         
     CRWQuestion *question = [[self alloc] init];
     
-    question.questionID = [[dictionary objectForKey:@"question_id"] integerValue];
+    question.questionID = [[dictionary objectForKey:@"question_id"] unsignedIntegerValue];
     question.title = [dictionary objectForKey:@"title"];
     question.link = [dictionary objectForKey:@"link"];
     question.tags = [dictionary objectForKey:@"tags"];
@@ -36,7 +36,7 @@
     question.dateCreated = [NSDate dateWithTimeIntervalSince1970:interval];
     
     question.ownerName = [dictionary valueForKeyPath:@"owner.display_name"];
-    question.ownerID = [dictionary valueForKeyPath:@"owner.user_id"];
+    question.ownerID = [[dictionary valueForKeyPath:@"owner.user_id"] unsignedIntegerValue];
     
     return question;
 }
