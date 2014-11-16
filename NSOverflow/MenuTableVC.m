@@ -25,17 +25,14 @@
     UINib *menuCellNib = [UINib nibWithNibName:kReIDMenuCell bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:menuCellNib forCellReuseIdentifier:kReIDMenuCell];
     
-    NSString *searchQuestionsItem = NSLocalizedString(@"Search Questions", nil);
-    NSString *myProfileItem = NSLocalizedString(@"My Profile", nil);
+    NSDictionary *searchQuestionsItem = @{@"title": NSLocalizedString(@"Search Questions", nil),
+                                          @"reuseID": kReIDQuestionsSearchVC};
+    NSDictionary *myProfileItem = @{@"title": NSLocalizedString(@"My Profile", nil),
+                                    @"reuseID": kReIDQuestionsSearchVC};
     self.menuItems = @[searchQuestionsItem, myProfileItem];
     
     self.title = NSLocalizedString(@"Menu", @"Main menu items");
 
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -46,7 +43,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MenuCell *cell = [tableView dequeueReusableCellWithIdentifier:kReIDMenuCell forIndexPath:indexPath];
-    cell.menuItemLabel.text = _menuItems[indexPath.row];
+    NSDictionary *item = self.menuItems[indexPath.row];
+    cell.menuItemLabel.text = [item objectForKey:@"title"];
     
     return cell;
 }
@@ -54,21 +52,9 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        QuestionsSearchVC *questionsVC = [self.storyboard instantiateViewControllerWithIdentifier:kReIDQuestionsSearchVC];
-        [self.navigationController pushViewController:questionsVC animated:YES];
-    }
-
+    NSDictionary *item = self.menuItems[indexPath.row];
+    id destinationVC = [self.storyboard instantiateViewControllerWithIdentifier:[item objectForKey:@"reuseID"]];
+    [self.navigationController pushViewController:destinationVC animated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
