@@ -18,6 +18,7 @@
 @property CRWStackOverflowClient *apiClient;
 @property (nonatomic, strong) NSArray *questions;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -30,6 +31,16 @@
     }
     
     return _dateFormatter;
+}
+
+- (UIActivityIndicatorView *)activityIndicator {
+    if (!_activityIndicator) {
+        _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        _activityIndicator.center = self.searchBar.center;
+        [self.searchBar addSubview:_activityIndicator];
+    }
+    
+    return _activityIndicator;
 }
 
 - (void)viewDidLoad {
@@ -54,6 +65,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
+    [[self activityIndicator] startAnimating];
     
     NSString *tagQuery = searchBar.text;
     
@@ -66,6 +78,7 @@
             else {
                 self.questions = questions;
                 [self.tableView reloadData];
+                [[self activityIndicator] stopAnimating];
             }
         }];
     }
