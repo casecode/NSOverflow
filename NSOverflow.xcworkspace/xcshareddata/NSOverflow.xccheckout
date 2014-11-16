@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>662672C2-4213-4CCB-8306-A4C804DAF4F9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NSOverflow</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6F168A800273A2C835C1E7E1C3C0017DF0E77484</key>
+		<string>https://github.com/casecode/NSOverflow.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NSOverflow.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6F168A800273A2C835C1E7E1C3C0017DF0E77484</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/casecode/NSOverflow.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6F168A800273A2C835C1E7E1C3C0017DF0E77484</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6F168A800273A2C835C1E7E1C3C0017DF0E77484</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NSOverflow</string>
+		</dict>
+	</array>
+</dict>
+</plist>
