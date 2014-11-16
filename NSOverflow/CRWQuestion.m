@@ -7,6 +7,7 @@
 //
 
 #import "CRWQuestion.h"
+#import "NSString+HTML.h"
 
 @interface CRWQuestion ()
 
@@ -39,6 +40,10 @@
     question.ownerID = [[dictionary valueForKeyPath:@"owner.user_id"] unsignedIntegerValue];
     
     return question;
+}
+
+- (NSString *)sanitizedTitle {
+    return [self.title kv_decodeHTMLCharacterEntities];
 }
 
 @end

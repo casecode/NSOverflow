@@ -21,4 +21,6 @@
 
 + (CRWQuestion *)questionFromDictionary:(NSDictionary *)dictionary;
 
+- (NSString *)sanitizedTitle;
+
 @end

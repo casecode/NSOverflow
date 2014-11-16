@@ -100,7 +100,7 @@
 }
 
 - (void)configureCell:(QuestionCell *)cell withQuestion:(CRWQuestion *)question {
-    cell.titleLabel.text = question.title;
+    cell.titleLabel.text = [question sanitizedTitle];
     cell.ownerNameLabel.text = question.ownerName;
     cell.dateCreatedLabel.text = [[self dateFormatter] stringFromDate:question.dateCreated];
 }
