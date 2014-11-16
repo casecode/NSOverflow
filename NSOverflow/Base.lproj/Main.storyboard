@@ -26,14 +26,14 @@
                                     <action selector="loginPressed:" destination="IMj-pV-gWe" eventType="touchUpInside" id="QJb-Oy-him"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is recommended that you log into StackOverflow in order to increase your rate limit." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-1I-1t6">
-                                <rect key="frame" x="16" y="121" width="568" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are authenticated with StackOverflow." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ay2-gS-jr2">
+                                <rect key="frame" x="16" y="50" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are authenticated with StackOverflow." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ay2-gS-jr2">
-                                <rect key="frame" x="16" y="50" width="568" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It does not appear that you are authenticated with StackOverflow. Please log in before using this app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-1I-1t6">
+                                <rect key="frame" x="16" y="121" width="568" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -92,7 +92,7 @@
         <!--Questions-->
         <scene sceneID="KMc-fO-ptf">
             <objects>
-                <viewController title="Questions" id="vZt-U5-txH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionsSearchVC" title="Questions" id="vZt-U5-txH" customClass="QuestionsSearchVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XsJ-xB-set"/>
                         <viewControllerLayoutGuide type="bottom" id="QC9-B9-PCN"/>
@@ -101,15 +101,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pad-wo-Olw">
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pad-wo-Olw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="8Bi-96-vIU">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="JeO-zj-lls">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        </searchBar>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="JeO-zj-lls" firstAttribute="leading" secondItem="8Bi-96-vIU" secondAttribute="leading" id="DJI-hY-u2C"/>
+                                        <constraint firstItem="JeO-zj-lls" firstAttribute="top" secondItem="8Bi-96-vIU" secondAttribute="top" id="UO2-Vc-Ogz"/>
+                                        <constraint firstAttribute="bottom" secondItem="JeO-zj-lls" secondAttribute="bottom" id="jNG-wa-Lt3"/>
+                                        <constraint firstAttribute="trailing" secondItem="JeO-zj-lls" secondAttribute="trailing" id="l6G-rN-wqB"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Q3t-Vw-IZm">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q3t-Vw-IZm" id="EjZ-Ul-IOK">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vZt-U5-txH" id="FlJ-tQ-Dle"/>
+                                    <outlet property="delegate" destination="vZt-U5-txH" id="Scx-t1-l49"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pad-wo-Olw" firstAttribute="top" secondItem="JdA-Wy-qhg" secondAttribute="topMargin" id="F2c-R0-5kf"/>
+                            <constraint firstItem="pad-wo-Olw" firstAttribute="top" secondItem="JdA-Wy-qhg" secondAttribute="topMargin" id="FMU-sy-QGz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pad-wo-Olw" secondAttribute="trailing" constant="-16" id="LTe-rz-PAV"/>
                             <constraint firstItem="pad-wo-Olw" firstAttribute="top" secondItem="JdA-Wy-qhg" secondAttribute="topMargin" id="Rhu-vb-xOb"/>
+                            <constraint firstItem="pad-wo-Olw" firstAttribute="leading" secondItem="JdA-Wy-qhg" secondAttribute="leadingMargin" constant="-16" id="ke3-hR-G2Q"/>
+                            <constraint firstItem="QC9-B9-PCN" firstAttribute="top" secondItem="pad-wo-Olw" secondAttribute="bottom" id="mFL-fL-79B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pad-wo-Olw" secondAttribute="trailing" constant="-16" id="mUl-Ak-rzg"/>
                             <constraint firstItem="QC9-B9-PCN" firstAttribute="top" secondItem="pad-wo-Olw" secondAttribute="bottom" id="mmc-r2-cH6"/>
                             <constraint firstItem="pad-wo-Olw" firstAttribute="leading" secondItem="JdA-Wy-qhg" secondAttribute="leadingMargin" constant="-16" id="yhg-sJ-FSh"/>
@@ -126,6 +159,10 @@
                         </variation>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="JeO-zj-lls" id="LYJ-O5-mCe"/>
+                        <outlet property="tableView" destination="pad-wo-Olw" id="8mU-9i-HrL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOH-Si-jKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

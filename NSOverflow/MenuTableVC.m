@@ -9,6 +9,7 @@
 #import "MenuTableVC.h"
 #import "CRWConstants.h"
 #import "MenuCell.h"
+#import "QuestionsSearchVC.h"
 
 @interface MenuTableVC ()
 
@@ -28,7 +29,7 @@
     NSString *myProfileItem = NSLocalizedString(@"My Profile", nil);
     self.menuItems = @[searchQuestionsItem, myProfileItem];
     
-    self.title = NSLocalizedString(@"Menu", @"Main menu item");
+    self.title = NSLocalizedString(@"Menu", @"Main menu items");
 
 }
 
@@ -48,6 +49,16 @@
     cell.menuItemLabel.text = _menuItems[indexPath.row];
     
     return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        QuestionsSearchVC *questionsVC = [self.storyboard instantiateViewControllerWithIdentifier:kReIDQuestionsSearchVC];
+        [self.navigationController pushViewController:questionsVC animated:YES];
+    }
+
 }
 
 /*

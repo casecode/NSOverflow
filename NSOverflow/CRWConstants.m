@@ -13,3 +13,5 @@ NSString * const kSOTokenKey = @"token";
 
 // Reuse Identifiers
 NSString * const kReIDMenuCell = @"MenuCell";
+NSString * const kReIDQuestionCell = @"QuestionCell";
+NSString * const kReIDQuestionsSearchVC = @"QuestionsSearchVC";

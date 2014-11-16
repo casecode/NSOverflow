@@ -13,3 +13,5 @@ FOUNDATION_EXPORT NSString * const kSOTokenKey;
 
 // ReuseIdentifiers
 FOUNDATION_EXPORT NSString * const kReIDMenuCell;
+FOUNDATION_EXPORT NSString * const kReIDQuestionCell;
+FOUNDATION_EXPORT NSString * const kReIDQuestionsSearchVC;

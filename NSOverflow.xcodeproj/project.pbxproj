@@ -16,6 +16,10 @@
 		48C8BF961A182325007EC28F /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C8BF951A182325007EC28F /* MenuCell.xib */; };
 		48C8BF991A18234C007EC28F /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C8BF981A18234C007EC28F /* MenuCell.m */; };
 		48C8BFA51A183259007EC28F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48C8BFA71A183259007EC28F /* Localizable.strings */; };
+		48C8BFAC1A187909007EC28F /* QuestionsSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C8BFAB1A187909007EC28F /* QuestionsSearchVC.m */; };
+		48C8BFAF1A187AD1007EC28F /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C8BFAE1A187AD1007EC28F /* QuestionCell.m */; };
+		48C8BFB11A187AE4007EC28F /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C8BFB01A187AE4007EC28F /* QuestionCell.xib */; };
+		48C8BFB71A188AC6007EC28F /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C8BFB61A188AC6007EC28F /* NSString+Regex.m */; };
 		48CF2D791A12E08800FAC0B7 /* CRWQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */; };
 		48CF2D7C1A12F80100FAC0B7 /* CRWConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CF2D7B1A12F80100FAC0B7 /* CRWConstants.m */; };
 		48D6E6131A11561400D2EC68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6E6121A11561400D2EC68 /* main.m */; };
@@ -59,6 +63,13 @@
 		48C8BFA41A18321B007EC28F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		48C8BFA81A183261007EC28F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48C8BFA91A183265007EC28F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		48C8BFAA1A187909007EC28F /* QuestionsSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsSearchVC.h; sourceTree = "<group>"; };
+		48C8BFAB1A187909007EC28F /* QuestionsSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsSearchVC.m; sourceTree = "<group>"; };
+		48C8BFAD1A187AD1007EC28F /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
+		48C8BFAE1A187AD1007EC28F /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
+		48C8BFB01A187AE4007EC28F /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		48C8BFB51A188AC6007EC28F /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
+		48C8BFB61A188AC6007EC28F /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
 		48CF2D771A12E08800FAC0B7 /* CRWQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWQuestion.h; sourceTree = "<group>"; };
 		48CF2D781A12E08800FAC0B7 /* CRWQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRWQuestion.m; sourceTree = "<group>"; };
 		48CF2D7A1A12F7E900FAC0B7 /* CRWConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRWConstants.h; sourceTree = "<group>"; };
@@ -107,6 +118,9 @@
 				48C8BF971A18234C007EC28F /* MenuCell.h */,
 				48C8BF981A18234C007EC28F /* MenuCell.m */,
 				48C8BF951A182325007EC28F /* MenuCell.xib */,
+				48C8BFAD1A187AD1007EC28F /* QuestionCell.h */,
+				48C8BFAE1A187AD1007EC28F /* QuestionCell.m */,
+				48C8BFB01A187AE4007EC28F /* QuestionCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -142,6 +156,8 @@
 				48CF2D7B1A12F80100FAC0B7 /* CRWConstants.m */,
 				48C1AC151A1426A200C094D1 /* CRWNSOverflowError.h */,
 				48C1AC161A1426A200C094D1 /* CRWNSOverflowError.m */,
+				48C8BFB51A188AC6007EC28F /* NSString+Regex.h */,
+				48C8BFB61A188AC6007EC28F /* NSString+Regex.m */,
 				48D6E61D1A11561400D2EC68 /* Main.storyboard */,
 				48D6E6201A11561400D2EC68 /* Images.xcassets */,
 				48D6E6221A11561400D2EC68 /* LaunchScreen.xib */,
@@ -191,6 +207,8 @@
 				48C11EE91A15E40400374BA4 /* LoginVC.m */,
 				48C8BF911A1820EC007EC28F /* MenuTableVC.h */,
 				48C8BF921A1820EC007EC28F /* MenuTableVC.m */,
+				48C8BFAA1A187909007EC28F /* QuestionsSearchVC.h */,
+				48C8BFAB1A187909007EC28F /* QuestionsSearchVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -297,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48C8BFA51A183259007EC28F /* Localizable.strings in Resources */,
+				48C8BFB11A187AE4007EC28F /* QuestionCell.xib in Resources */,
 				48D6E61F1A11561400D2EC68 /* Main.storyboard in Resources */,
 				48C8BF961A182325007EC28F /* MenuCell.xib in Resources */,
 				48D6E6241A11561400D2EC68 /* LaunchScreen.xib in Resources */,
@@ -323,9 +342,12 @@
 				48CF2D791A12E08800FAC0B7 /* CRWQuestion.m in Sources */,
 				48CF2D7C1A12F80100FAC0B7 /* CRWConstants.m in Sources */,
 				48D6E6441A11924E00D2EC68 /* CRWStackOverflowClient.m in Sources */,
+				48C8BFAC1A187909007EC28F /* QuestionsSearchVC.m in Sources */,
+				48C8BFAF1A187AD1007EC28F /* QuestionCell.m in Sources */,
 				48D6E6161A11561400D2EC68 /* AppDelegate.m in Sources */,
 				48C1AC171A1426A200C094D1 /* CRWNSOverflowError.m in Sources */,
 				48C8BF931A1820EC007EC28F /* MenuTableVC.m in Sources */,
+				48C8BFB71A188AC6007EC28F /* NSString+Regex.m in Sources */,
 				48C11EEA1A15E40400374BA4 /* LoginVC.m in Sources */,
 				48C8BF991A18234C007EC28F /* MenuCell.m in Sources */,
 				48C1AC1A1A1434E100C094D1 /* OAuthVC.m in Sources */,
