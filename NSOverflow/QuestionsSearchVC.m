@@ -13,13 +13,14 @@
 #import "CRWQuestion.h"
 #import "NSString+Regex.h"
 #import "QuestionWebVC.h"
+#import <MONActivityIndicatorView/MONActivityIndicatorView.h>
 
-@interface QuestionsSearchVC () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface QuestionsSearchVC () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, MONActivityIndicatorViewDelegate>
 
 @property CRWStackOverflowClient *apiClient;
 @property (nonatomic, strong) NSArray *questions;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
-@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, strong) MONActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -34,10 +35,12 @@
     return _dateFormatter;
 }
 
-- (UIActivityIndicatorView *)activityIndicator {
+- (MONActivityIndicatorView *)activityIndicator {
     if (!_activityIndicator) {
-        _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        _activityIndicator = [[MONActivityIndicatorView alloc] init];
         _activityIndicator.center = self.searchBar.center;
+        _activityIndicator.numberOfCircles = 3;
+        _activityIndicator.delegate = self;
         [self.searchBar addSubview:_activityIndicator];
     }
     
@@ -56,6 +59,11 @@
     
     self.tableView.dataSource = self;
     self.searchBar.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UISearchBarDelegate
@@ -112,6 +120,18 @@
     QuestionWebVC *webVC = [[QuestionWebVC alloc] initWithURL:[NSURL URLWithString:question.link]];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:webVC];
     [self presentViewController:navController animated:YES completion:nil];
+}
+
+#pragma mark - MONActivityIndicatorViewDelegate
+
+- (UIColor *)activityIndicatorView:(MONActivityIndicatorView *)activityIndicatorView
+      circleBackgroundColorAtIndex:(NSUInteger)index {
+    // For a random background color for a particular circle
+    CGFloat red   = (arc4random() % 256)/255.0;
+    CGFloat green = (arc4random() % 256)/255.0;
+    CGFloat blue  = (arc4random() % 256)/255.0;
+    CGFloat alpha = 1.0f;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 @end

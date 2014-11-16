@@ -6,9 +6,9 @@
 // project.
 
 
-// YLProgressBar
-#define COCOAPODS_POD_AVAILABLE_YLProgressBar
-#define COCOAPODS_VERSION_MAJOR_YLProgressBar 3
-#define COCOAPODS_VERSION_MINOR_YLProgressBar 4
-#define COCOAPODS_VERSION_PATCH_YLProgressBar 0
+// MONActivityIndicatorView
+#define COCOAPODS_POD_AVAILABLE_MONActivityIndicatorView
+#define COCOAPODS_VERSION_MAJOR_MONActivityIndicatorView 0
+#define COCOAPODS_VERSION_MINOR_MONActivityIndicatorView 0
+#define COCOAPODS_VERSION_PATCH_MONActivityIndicatorView 1
 

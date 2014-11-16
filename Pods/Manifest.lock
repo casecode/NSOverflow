@@ -1,10 +1,10 @@
 PODS:
-  - YLProgressBar (3.4.0)
+  - MONActivityIndicatorView (0.0.1)
 
 DEPENDENCIES:
-  - YLProgressBar (~> 3.4.0)
+  - MONActivityIndicatorView
 
 SPEC CHECKSUMS:
-  YLProgressBar: 1e8b12bd852facc4e9d64e044023c222dde57c9c
+  MONActivityIndicatorView: 728965121e59cef32c1bc4676f6868e35f3c8c61
 
 COCOAPODS: 0.34.4

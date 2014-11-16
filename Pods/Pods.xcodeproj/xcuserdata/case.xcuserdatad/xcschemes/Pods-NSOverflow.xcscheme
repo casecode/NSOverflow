@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E0C4A01B5303ECE69F7A3485"
+               BlueprintIdentifier = "06E7385BF64B0DF20BAA250C"
                BuildableName = "libPods-NSOverflow.a"
                BlueprintName = "Pods-NSOverflow"
                ReferencedContainer = "container:Pods.xcodeproj">

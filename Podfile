@@ -4,7 +4,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'NSOverflow' do
-	pod 'YLProgressBar', '~> 3.4.0'
+	pod 'MONActivityIndicatorView'
 end
 
 target 'NSOverflowTests' do

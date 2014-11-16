@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B1CB6BE37EE7A755277851EF"
-               BuildableName = "libPods-NSOverflow-YLProgressBar.a"
-               BlueprintName = "Pods-NSOverflow-YLProgressBar"
+               BlueprintIdentifier = "58052316CE75DA602301697E"
+               BuildableName = "libPods-NSOverflow-MONActivityIndicatorView.a"
+               BlueprintName = "Pods-NSOverflow-MONActivityIndicatorView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

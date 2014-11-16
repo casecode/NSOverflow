@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-NSOverflow-YLProgressBar.xcscheme</key>
+		<key>Pods-NSOverflow-MONActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B1CB6BE37EE7A755277851EF</key>
+		<key>06E7385BF64B0DF20BAA250C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0C4A01B5303ECE69F7A3485</key>
+		<key>58052316CE75DA602301697E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
