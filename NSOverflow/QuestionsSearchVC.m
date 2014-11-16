@@ -12,8 +12,9 @@
 #import "QuestionCell.h"
 #import "CRWQuestion.h"
 #import "NSString+Regex.h"
+#import "QuestionWebVC.h"
 
-@interface QuestionsSearchVC () <UITableViewDataSource, UISearchBarDelegate>
+@interface QuestionsSearchVC () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property CRWStackOverflowClient *apiClient;
 @property (nonatomic, strong) NSArray *questions;
@@ -102,6 +103,15 @@
     cell.titleLabel.text = question.title;
     cell.ownerNameLabel.text = question.ownerName;
     cell.dateCreatedLabel.text = [[self dateFormatter] stringFromDate:question.dateCreated];
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CRWQuestion *question = self.questions[indexPath.row];
+    QuestionWebVC *webVC = [[QuestionWebVC alloc] initWithURL:[NSURL URLWithString:question.link]];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:webVC];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 @end
