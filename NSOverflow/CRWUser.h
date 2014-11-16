@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface CRWUser : NSObject
 
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly, strong) NSString *displayName;
 @property (nonatomic, readonly, strong) NSString *imageURL;
 @property (nonatomic, readonly, copy) NSDate *dateCreated;
+@property (nonatomic, strong) UIImage *profileImage;
 
 - (instancetype)initWithDictionary:(NSDictionary *)data;
 

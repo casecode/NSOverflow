@@ -41,25 +41,36 @@
     self.title = NSLocalizedString(@"My Profile", @"Profile of the authenticated user");
     [self hideLabels];
     
+    if (_user) {
+        [self configureProfileViews];
+    }
+    else {
     self.apiClient = [CRWStackOverflowClient sharedClient];
-    [_apiClient fetchAuthenticatedUser:^(CRWUser *user, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@", [error localizedDescription]);
-        }
-        else {
-            self.user = user;
-            [self configureProfileViews];
-        }
-    }];
+        [_apiClient fetchAuthenticatedUser:^(CRWUser *user, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@", [error localizedDescription]);
+            }
+            else {
+                self.user = user;
+                [self configureProfileViews];
+            }
+        }];
+    }
 }
 
 - (void)configureProfileViews {
     self.userNameLabel.text = self.user.displayName;
     self.creationDateLabel.text = [[self dateFormatter] stringFromDate:self.user.dateCreated];
     [self showLabels];
-    [self fetchUserImage:^(UIImage *image, NSError *error) {
-        self.userImageView.image = image;
-    }];
+    if (_user.profileImage) {
+        self.userImageView.image = _user.profileImage;
+    }
+    else {
+        [self fetchUserImage:^(UIImage *image, NSError *error) {
+            _user.profileImage = image;
+            self.userImageView.image = image;
+        }];
+    }
 }
 
 - (void)fetchUserImage:(void (^)(UIImage *image, NSError *error))completion {

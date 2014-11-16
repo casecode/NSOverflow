@@ -229,7 +229,7 @@ static NSString * const kOAuthRedirectURI = @"https://stackexchange.com/oauth/lo
                              @"sort": @"reputation"};
     NSString *queryString = [self buildQueryStringWithParams:params];
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@", kAPIBaseURL, resourcePath, queryString];
-    NSLog(@"%@", urlString);
+
     return [NSURL URLWithString:urlString];
 }
 
